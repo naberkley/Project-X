@@ -9,9 +9,9 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; /* Ensure the header is above other content */
-  background-color: white; /* Optional: Set a background color */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+  z-index: 1000;
+  background-color: white;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .fixed-height-carousel {
