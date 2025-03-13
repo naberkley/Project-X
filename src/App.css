@@ -1,8 +1,39 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure the header is above other content */
+  background-color: white; /* Optional: Set a background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+}
+
+.fixed-height-carousel {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.fixed-height-carousel image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain; /* Scale down the image to fit within the container */
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.2); /* Optional: Add a background color for better visibility */
+  padding: 10px;
+  color: white;
 }
 
 .logo {
@@ -39,4 +70,45 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+.login-form {
+  margin-top: 40px;
+  padding: 20px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.login-form div {
+  margin-bottom: 40px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #0056b3;
 }

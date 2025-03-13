@@ -1,19 +1,22 @@
-import { ReactNode } from "react";
-import Alert from "react-bootstrap/Alert";
-import CloseButton from "react-bootstrap/CloseButton";
+import React from "react";
+import classNames from "classnames";
 
-interface Props {
-  children: ReactNode;
-  onClose: () => void;
+interface AlertProps {
+  message: string;
+  type: "success" | "error" | "notification";
 }
 
-const CustomAlert = ({ children, onClose }: Props) => {
-  return (
-    <Alert variant="primary" dismissible onClose={onClose}>
-      {children}
-      <CloseButton onClick={onClose} aria-label="Close" />
-    </Alert>
-  );
+const CustomAlert: React.FC<AlertProps> = ({ message, type }) => {
+  const alertClass = classNames("alert", {
+    "alert-success": type === "success",
+    "alert-danger": type === "error",
+    "alert-info": type === "notification",
+  });
+
+  console.log("CustomAlert type:", type); // Debugging line
+  console.log("CustomAlert class:", alertClass); // Debugging line
+
+  return <div className={alertClass}>{message}</div>;
 };
 
 export default CustomAlert;

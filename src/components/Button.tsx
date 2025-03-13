@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "react-bootstrap/Button";
 
 interface Props {
@@ -24,4 +23,4 @@ const CustomButton = ({ children, color = "primary", onClick }: Props) => {
   );
 };
 
-export default Button;
+export default CustomButton;
