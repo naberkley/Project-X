@@ -1,3 +1,5 @@
+import React from "react";
+
 const ProtectedComponent: React.FC = () => {
   return (
     <div>

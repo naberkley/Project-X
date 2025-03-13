@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import hero1 from "../assets/hero_carousel_imgs/hero1.jpg";
@@ -113,6 +114,8 @@ function Hero() {
       activeIndex={index}
       onSelect={handleSelect}
       className="fixed-height-carousel"
+      role="region"
+      aria-label="carousel"
     >
       {heroData.map((hero) => (
         <Carousel.Item key={hero.id}>
@@ -126,6 +129,24 @@ function Hero() {
           </Carousel.Caption>
         </Carousel.Item>
       ))}
+      <a
+        className="carousel-control-prev"
+        href="#"
+        role="button"
+        aria-label="Previous"
+      >
+        <span className="carousel-control-prev-icon" aria-hidden="true" />
+        <span className="visually-hidden">Previous</span>
+      </a>
+      <a
+        className="carousel-control-next"
+        href="#"
+        role="button"
+        aria-label="Next"
+      >
+        <span className="carousel-control-next-icon" aria-hidden="true" />
+        <span className="visually-hidden">Next</span>
+      </a>
     </Carousel>
   );
 }
