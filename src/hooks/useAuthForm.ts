@@ -23,7 +23,7 @@ const useAuthForm = (url: string) => {
     }
 
     if (!validatePassword(password)) {
-      setError("Password must be at least 6 characters long.");
+      setError("Password must be at least 8 characters long, contain an uppercase letter, a lowercase letter, a digit, and a special character.");
       return;
     }
 
@@ -42,7 +42,14 @@ const useAuthForm = (url: string) => {
       }
 
       const userData: User = await response.json();
-      login(userData);
+      console.log("User data received:", userData); // Add this line
+
+      // Store user_role in localStorage
+      if (userData.user_role) {
+        localStorage.setItem("user_role", userData.user_role);
+      }
+
+      login(userData); // Ensure this userData includes the password property
       setSuccess("Operation successful! Redirecting to home...");
       setTimeout(() => {
         navigate("/");

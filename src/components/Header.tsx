@@ -4,8 +4,48 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useAuth } from "../auth/authContext"; // Import the authentication context
+import "../assets/css/layout/Header.css";
 
-function AppHeader() {
+// Component for navigation links
+const NavigationLinks: React.FC = () => (
+  <>
+    <Nav.Link as={Link} to="/">
+      Home
+    </Nav.Link>
+    <Nav.Link as={Link} to="/portfolio">
+      Our Work
+    </Nav.Link>
+    <Nav.Link as={Link} to="/pricing">
+      Pricing
+    </Nav.Link>
+  </>
+);
+
+// Component for user-specific links
+const UserLinks: React.FC<{ user: any }> = ({ user }) => {
+  if (user) {
+    return (
+      <>
+        <Nav.Link as={Link} to="/profile">
+          Logged in as: {user.email.split("@")[0]}
+        </Nav.Link>
+        {user.user_role === "admin" && (
+          <Nav.Link as={Link} to="/admin">
+            Admin
+          </Nav.Link>
+        )}
+      </>
+    );
+  }
+
+  return (
+    <Nav.Link as={Link} to="/login">
+      Log In
+    </Nav.Link>
+  );
+};
+
+const AppHeader: React.FC = () => {
   const { user } = useAuth(); // Get the user from the authentication context
 
   return (
@@ -16,22 +56,14 @@ function AppHeader() {
       bg="light"
       data-bs-theme="light"
     >
-      <Container>
+      <Container fluid>
         <Navbar.Brand as={Link} to="/">
           Project-X
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/">
-              Home
-            </Nav.Link>
-            <Nav.Link as={Link} to="/portfolio">
-              Our Work
-            </Nav.Link>
-            <Nav.Link as={Link} to="/pricing">
-              Pricing
-            </Nav.Link>
+            <NavigationLinks />
           </Nav>
           <Nav>
             <Nav.Link as={Link} to="/about">
@@ -40,22 +72,12 @@ function AppHeader() {
             <Nav.Link as={Link} to="/contact">
               Contact
             </Nav.Link>
-            {user ? (
-              <Nav.Link as={Link} to="/profile">
-                Logged in as: {user.email.split("@")[0]}
-              </Nav.Link>
-            ) : (
-              <>
-                <Nav.Link as={Link} to="/login">
-                  Log In
-                </Nav.Link>
-              </>
-            )}
+            <UserLinks user={user} />
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
-}
+};
 
 export default AppHeader;

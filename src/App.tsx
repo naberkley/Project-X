@@ -11,7 +11,9 @@ import Register from "./components/RegisterForm";
 import Profile from "./components/UserProfile";
 import PrivateRoute from "./components/PrivateRoute";
 import ProtectedComponent from "./components/ProtectedComponent";
-import "./App.css";
+import ProtectedComponent_admin from "./components/ProtectedComponent_admin";
+import AdminPanel from "./components/AdminPanel";
+import "./assets/css/App.css";
 
 function App() {
   return (
@@ -33,6 +35,9 @@ function App() {
             <Route element={<PrivateRoute />}>
               <Route path="/profile" element={<Profile />} />
               <Route path="/protected" element={<ProtectedComponent />} />
+            </Route>
+            <Route element={<ProtectedComponent_admin />}>
+              <Route path="/admin" element={<AdminPanel />} />
             </Route>
           </Routes>
         </main>

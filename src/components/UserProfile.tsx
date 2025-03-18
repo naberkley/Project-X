@@ -1,4 +1,5 @@
 import React from "react";
+import CustomButton from "./Button";
 import { useAuth } from "../auth/authContext";
 
 const UserProfile: React.FC = () => {
@@ -12,11 +13,10 @@ const UserProfile: React.FC = () => {
     <div>
       <h1>Profile</h1>
       <p>User ID: {user.id}</p>
-      <p>Subscription: {user.subscriptionTier}</p>
-      <p>Payment Method: {user.paymentInfo}</p>
+      <p>Subscription: {user.subscription_tier}</p>
+      <p>Payment Method: {user.payment_info}</p>
       <p>Email: {user.email}</p>
-      <p>Password: {user.password}</p> {/* Change this later, not secure */}
-      <button onClick={logout}>Log Out</button>
+      <CustomButton onClick={logout}>Log Out</CustomButton>
     </div>
   );
 };

@@ -1,7 +1,8 @@
 export interface User {
   id?: string;
-  subscriptionTier?: string; // placeholder
-  paymentInfo?: string; // placeholder
+  subscription_tier?: string; // placeholder
+  payment_info?: string; // placeholder
   email: string;
   password: string;
+  user_role: string;
 }

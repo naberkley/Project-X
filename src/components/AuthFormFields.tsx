@@ -20,8 +20,11 @@ const AuthFormFields: React.FC<AuthFormFieldsProps> = ({
         <input
           type="email"
           id="email"
+          name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          autoComplete="email"
+          required
         />
       </div>
       <div>
@@ -29,8 +32,11 @@ const AuthFormFields: React.FC<AuthFormFieldsProps> = ({
         <input
           type="password"
           id="password"
+          name="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          autoComplete="current-password"
+          required
         />
       </div>
     </>

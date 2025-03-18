@@ -3,6 +3,7 @@ import CustomAlert from "./Alert";
 import { Link } from "react-router-dom";
 import AuthFormFields from "./AuthFormFields";
 import useAuthForm from "../hooks/useAuthForm";
+import "../assets/css/components/login-form.css";
 
 const Login: React.FC = () => {
   const {

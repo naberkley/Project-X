@@ -1,0 +1,11 @@
+.admin-table {
+  width: 75%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  text-align: left; /* Left-align all table headers and cells */
+  padding: 8px; /* Add some padding for better readability */
+  border-bottom: 1px solid #ddd; /* Optional: Add a border for better separation */
+}

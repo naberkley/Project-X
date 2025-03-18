@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import "../assets/css/components/carousel.css";
+
 import Carousel from "react-bootstrap/Carousel";
 import hero1 from "../assets/hero_carousel_imgs/hero1.jpg";
 import hero2 from "../assets/hero_carousel_imgs/hero2.jpg";
