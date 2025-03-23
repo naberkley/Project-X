@@ -18,6 +18,9 @@ const NavigationLinks: React.FC = () => (
     <Nav.Link as={Link} to="/pricing">
       Pricing
     </Nav.Link>
+    <Nav.Link as={Link} to="/order">
+      Order
+    </Nav.Link>
   </>
 );
 

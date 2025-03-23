@@ -29,6 +29,7 @@ function AdminPanel() {
         setUsers(data);
       } catch (err) {
         if (err instanceof Error) {
+          console.error("Error fetching users:", err.message); // Log the error for debugging
           setError(err.message);
         } else {
           setError("An unknown error occurred");
@@ -120,9 +121,9 @@ function AdminPanel() {
   };
 
   return (
-    <div>
+    <div className="admin-panel">
       <h1>Admin Panel</h1>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="error-message">{error}</p>}
       <table className="admin-table">
         <thead>
           <tr>
