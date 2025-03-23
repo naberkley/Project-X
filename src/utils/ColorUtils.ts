@@ -1,5 +1,9 @@
-export const rgbToHex = (r: number, g: number, b: number) =>
-  `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+export const rgbToHex = (r: number, g: number, b: number) => {
+  const clamp = (value: number) => Math.min(Math.max(value, 0), 255);
+  return `#${((1 << 24) + (clamp(r) << 16) + (clamp(g) << 8) + clamp(b))
+    .toString(16)
+    .slice(1)}`;
+};
 
 export const rgbToCMYK = (r: number, g: number, b: number) => {
   const rRatio = r / 255;
@@ -20,6 +24,9 @@ export const rgbToCMYK = (r: number, g: number, b: number) => {
 };
 
 export const hexToRGB = (hex: string) => {
+  if (!/^#?[0-9A-Fa-f]{6}$/.test(hex)) {
+    return { r: 0, g: 0, b: 0 }; // Return black for invalid hex
+  }
   const bigint = parseInt(hex.replace("#", ""), 16);
   return {
     r: (bigint >> 16) & 255,

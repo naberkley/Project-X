@@ -13,7 +13,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import ProtectedComponent from "./components/ProtectedComponent";
 import ProtectedComponent_admin from "./components/ProtectedComponent_admin";
 import AdminPanel from "./components/AdminPanel";
-import Order from "./components/Order";
+import OrderImages from "./components/OrderImages/OrderImages";
 import "./assets/css/App.css";
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
             <Route path="/" element={<Hero />} />
             <Route path="/Portfolio" element={<Portfolio />} />
             <Route path="/pricing" element={<Pricing />} />
-            <Route path="/order" element={<Order />} />
+            <Route path="/order" element={<OrderImages />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
