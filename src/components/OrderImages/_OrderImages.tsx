@@ -35,10 +35,19 @@ function OrderImages() {
     if (storedJobName) setJobName(storedJobName);
   }, [setClientName, setJobName]);
 
-  // Save clientName and jobName to localStorage whenever they change
+  // Save or clear clientName and jobName in localStorage whenever they change
   useEffect(() => {
-    if (clientName) localStorage.setItem("clientName", clientName);
-    if (jobName) localStorage.setItem("jobName", jobName);
+    if (clientName.trim()) {
+      localStorage.setItem("clientName", clientName);
+    } else {
+      localStorage.removeItem("clientName"); // Remove from localStorage if empty
+    }
+
+    if (jobName.trim()) {
+      localStorage.setItem("jobName", jobName);
+    } else {
+      localStorage.removeItem("jobName"); // Remove from localStorage if empty
+    }
   }, [clientName, jobName]);
 
   // Function to handle the "Confirm" button click

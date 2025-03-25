@@ -27,6 +27,7 @@ const ClientInfoStep: React.FC = () => {
               placeholder="Enter client name"
               value={clientName}
               onChange={(e) => setClientName(e.target.value)}
+              spellCheck="false" // Disable spellcheck
             />
           </div>
           <div className="mb-3">
@@ -40,6 +41,7 @@ const ClientInfoStep: React.FC = () => {
               placeholder="Enter job name"
               value={jobName}
               onChange={(e) => setJobName(e.target.value)}
+              spellCheck="false" // Disable spellcheck
             />
           </div>
         </Card.Body>
