@@ -112,7 +112,7 @@ export const OrderImagesProvider: React.FC<{ children: React.ReactNode }> = ({
     return `${imageWidth / divisor}:${imageHeight / divisor}`;
   }, [imageWidth, imageHeight]);
 
-  const [pricePerImage, setPricePerImage] = useState(5.0); // Default price per image
+  const [pricePerImage /*, setPricePerImage */] = useState(5.0); // Default price per image
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
 
   // Calculate total price based on the number of uploaded files

@@ -33,8 +33,8 @@ buildProcess.on('close', (code) => {
     console.log(`Server process exited with code ${code}`);
   });
 
-  console.log('Server running at http://localhost:5000, press Ctrl+C to stop.');
+  console.log('Server running at http://localhost:8080, press Ctrl+C to stop.');
 
   // Open the default browser to the server URL
-  open('http://localhost:5000');
+  // open('http://localhost:8080');
 });
