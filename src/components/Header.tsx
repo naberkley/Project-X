@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useAuth } from "../auth/authContext"; // Import the authentication context
-import "../assets/css/layout/Header.css";
+import "../assets/css/layout/header.css";
 
 // Component for navigation links
 const NavigationLinks: React.FC = () => (
